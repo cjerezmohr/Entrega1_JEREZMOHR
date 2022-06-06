@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.template import Template
 
 from django.shortcuts import render
-def saludo(request):
-    return HttpResponse('hola')
+def index(request):
+    return render(request, 'index.html')
 
 def adios(request):
     return HttpResponse('adios')
