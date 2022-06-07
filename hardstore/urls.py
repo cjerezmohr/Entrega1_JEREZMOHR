@@ -29,6 +29,6 @@ urlpatterns = [
     path('', index, name = 'index'),
     path('adios/', adios, name = 'adios'),
     path('templates/', prueba_templates, name = 'templates'),
-    #path('store/', market, name = 'store'),
-    path('store/', include('productos.urls')),
+   
+    path('', include('productos.urls')),
 ]

@@ -1,16 +1,4 @@
 {% extends 'base.html' %}
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
 {% block titulo %}
 <div class="d-flex" style = "margin-top:5rem; margin-left:7rem">
     {%for equipo in equipo_nuevo%}
@@ -26,22 +14,5 @@
             <a href="#" class="btn btn-primary">Agregar a carrito</a>
         </div>
     </div>
-    {%endfor%}
-</div>
-    {%for perif in externo_nuevo%}
-    {{perif.tipo}}
-    {{perif.marca}}
-    {{perif.modelo}}
-    {{perif.precio}}
-    {%endfor%}
-
-    {%for monitor in monitor_nuevo%}
-    {{monitor.tipo}}
-    {{monitor.marca}}
-    {{monitor.modelo}}
-    {{monitor.resolucion}}
-    {{monitor.conexion}}
-    {%endfor%}
+{%endfor%}
 {% endblock %}
-</body>
-</html>

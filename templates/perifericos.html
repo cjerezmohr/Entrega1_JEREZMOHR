@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block titulo %}
+<div class="d-flex" style = "margin-top:5rem; margin-left:7rem">
+    {%for perif in externo_nuevo%}
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"> {{perif.tipo}}</h5>
+            <h5 class="card-title"> {{perif.marca}}</h5>
+            <h5 class="card-title"> {{perif.modelo}}</h5>
+            <h5 class="card-title"> {{perif.precio}}</h5>
+            <p class="card-text">texto de prueba aqui</p>
+            <a href="#" class="btn btn-primary">Agregar a carrito</a>
+        </div>
+    </div>
+{%endfor%}
+{% endblock %}
