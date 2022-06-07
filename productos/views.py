@@ -1,6 +1,7 @@
 import re
 from django.shortcuts import render
 from productos.models import *
+from productos.forms import *
 
 # Create your views here.
 #def market(request):
@@ -26,4 +27,6 @@ def monitor(request):
     return render(request, 'monitores.html', context = context)
 
 def crear_equipo(request):
-    return render(request, 'crear_equipo.html')
+    form = Equipo_form()
+    context = {'form':form}
+    return render(request, 'crear_equipo.html', context = context)
