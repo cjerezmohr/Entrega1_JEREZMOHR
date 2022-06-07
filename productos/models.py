@@ -10,6 +10,10 @@ class Desktop_notebook(models.Model):
     precio = models.FloatField()
     activo = models.BooleanField(default=True)
 
+    class Meta:
+        verbose_name = 'Equipo'
+        verbose_name_plural = 'Equipos'
+
 class Periferico(models.Model):
     tipo = models.CharField(max_length=50)
     marca = models.CharField(max_length=30)
@@ -25,3 +29,7 @@ class Monitor(models.Model):
     conexion =  models.CharField(max_length=30)
     precio =  models.FloatField()
     activo = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = 'Monitor'
+        verbose_name_plural = 'Monitores'

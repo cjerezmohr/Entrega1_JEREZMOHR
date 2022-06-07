@@ -24,3 +24,6 @@ def monitor(request):
     monitor_nuevo = Monitor.objects.all()
     context = {'monitor_nuevo':monitor_nuevo}
     return render(request, 'monitores.html', context = context)
+
+def crear_equipo(request):
+    return render(request, 'crear_equipo.html')
