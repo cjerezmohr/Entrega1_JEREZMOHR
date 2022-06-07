@@ -44,3 +44,39 @@ def crear_equipo(request):
             )
             context ={'nuevo_equipo':nuevo_equipo}
         return render(request, 'crear_equipo.html', context = context)
+
+def crear_periferico(request):
+    if request.method == 'GET':
+        form = Periferico_form()
+        context = {'form':form}
+        return render(request, 'crear_periferico.html', context = context)
+    else:
+        form = Periferico_form(request.POST)
+        if form.is_valid():
+            nuevo_periferico = Periferico.objects.create(
+                tipo = form.cleaned_data['tipo'],
+                marca = form.cleaned_data['marca'],
+                modelo = form.cleaned_data['modelo'],
+                precio = form.cleaned_data['precio'],
+            )
+            context ={'nuevo_periferico':nuevo_periferico}
+        return render(request, 'crear_periferico.html', context = context)
+
+def crear_monitores(request):
+    if request.method == 'GET':
+        form = Monitor_form()
+        context = {'form':form}
+        return render(request, 'crear_monitores.html', context = context)
+    else:
+        form = Monitor_form(request.POST)
+        if form.is_valid():
+            nuevo_monitor = Monitor.objects.create(
+                tipo = form.cleaned_data['tipo'],
+                marca = form.cleaned_data['marca'],
+                modelo = form.cleaned_data['modelo'],
+                resolucion = form.cleaned_data['resolucion'],
+                conexion = form.cleaned_data['conexion'],
+                precio = form.cleaned_data['precio'],
+            )
+            context ={'nuevo_monitor':nuevo_monitor}
+        return render(request, 'crear_monitores.html', context = context)

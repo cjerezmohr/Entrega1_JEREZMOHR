@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+
+{% if form %}
+
+    <form action= "" method="POST">
+        {% csrf_token %}
+        <table>
+            {{form}}
+        </table>
+        <input type="submit", value = "Send">
+    </form>
+
+{% elif nuevo_monitor%}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"> {{nuevo_monitor.tipo}}</h5>
+            <h5 class="card-title"> {{nuevo_monitor.marca}}</h5>
+            <h5 class="card-title"> {{nuevo_monitor.modelo}}</h5>
+            <h5 class="card-title"> {{nuevo_monitor.resolucion}}</h5>
+            <h5 class="card-title"> ${{nuevo_monitor.conexion}}</h5>
+            <h5 class="card-title"> ${{nuevo_monitor.precio}}</h5>
+        </div>
+    </div>
+
+{% endif %}
+{% endblock %}
