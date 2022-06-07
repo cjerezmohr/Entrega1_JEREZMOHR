@@ -1,7 +1,28 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-<table>
-{{form}}
-</table>
+
+{% if form %}
+
+    <form action= "" method="POST">
+        {% csrf_token %}
+        <table>
+            {{form}}
+        </table>
+        <input type="submit", value = "Send">
+    </form>
+
+{% elif nuevo_equipo %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"> {{nuevo_equipo.marca}}</h5>
+            <h5 class="card-title"> {{nuevo_equipo.modelo}}</h5>
+            <h5 class="card-title"> {{nuevo_equipo.disco}}</h5>
+            <h5 class="card-title"> {{nuevo_equipo.memoria}}</h5>
+            <h5 class="card-title"> ${{nuevo_equipo.precio}}</h5>
+        </div>
+    </div>
+
+{% endif %}
 {% endblock %}

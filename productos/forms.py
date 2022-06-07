@@ -6,4 +6,3 @@ class Equipo_form(forms.Form):
     disco =  forms.CharField(max_length=20)
     memoria = forms.CharField(max_length=20)
     precio = forms.FloatField()
-    activo = forms.BooleanField()
