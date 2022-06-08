@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Desktop_notebook(models.Model):
+    name =   models.CharField(max_length=30, blank = True)
     marca = models.CharField(max_length=30)
     modelo = models.CharField(max_length=30)
     disco =  models.CharField(max_length=20)
@@ -15,6 +16,7 @@ class Desktop_notebook(models.Model):
         verbose_name_plural = 'Equipos'
 
 class Periferico(models.Model):
+    name = models.CharField(max_length=30,blank = True)
     tipo = models.CharField(max_length=50)
     marca = models.CharField(max_length=30)
     modelo =  models.CharField(max_length=30)
@@ -22,6 +24,7 @@ class Periferico(models.Model):
     activo = models.BooleanField(default=True)
 
 class Monitor(models.Model):
+    name = models.CharField(max_length=30,blank = True)
     tipo = models.CharField(max_length=10)
     marca = models.CharField(max_length=30)
     modelo =  models.CharField(max_length=30)

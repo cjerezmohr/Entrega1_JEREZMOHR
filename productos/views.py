@@ -36,6 +36,7 @@ def crear_equipo(request):
         form = Equipo_form(request.POST)
         if form.is_valid():
             nuevo_equipo = Desktop_notebook.objects.create(
+                name = form.cleaned_data['name'],
                 marca = form.cleaned_data['marca'],
                 modelo = form.cleaned_data['modelo'],
                 disco = form.cleaned_data['disco'],
@@ -54,6 +55,7 @@ def crear_periferico(request):
         form = Periferico_form(request.POST)
         if form.is_valid():
             nuevo_periferico = Periferico.objects.create(
+                name = form.cleaned_data['name'],
                 tipo = form.cleaned_data['tipo'],
                 marca = form.cleaned_data['marca'],
                 modelo = form.cleaned_data['modelo'],
@@ -71,6 +73,7 @@ def crear_monitores(request):
         form = Monitor_form(request.POST)
         if form.is_valid():
             nuevo_monitor = Monitor.objects.create(
+                name = form.cleaned_data['name'],
                 tipo = form.cleaned_data['tipo'],
                 marca = form.cleaned_data['marca'],
                 modelo = form.cleaned_data['modelo'],
@@ -80,3 +83,14 @@ def crear_monitores(request):
             )
             context ={'nuevo_monitor':nuevo_monitor}
         return render(request, 'crear_monitores.html', context = context)
+
+
+def search_view(request):
+    #print(request.GET)
+    #equipo = Desktop_notebook.objects.get()
+    equipo = Desktop_notebook.objects.filter(name__icontains = request.GET['search_view'])
+    periferico=Periferico.objects.filter(name__icontains = request.GET['search_view'])
+    monitor = Monitor.objects.filter(name__icontains = request.GET['search_view'])
+
+    context = {'equipo':equipo,'periferico':periferico,'monitor':monitor}
+    return render(request, 'search_view.html', context = context)

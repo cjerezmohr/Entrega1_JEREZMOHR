@@ -4,10 +4,11 @@
     {%for perif in externo_nuevo%}
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title"> {{perif.tipo}}</h5>
-            <h5 class="card-title"> {{perif.marca}}</h5>
-            <h5 class="card-title"> {{perif.modelo}}</h5>
-            <h5 class="card-title"> {{perif.precio}}</h5>
+            <h5 class="card-title"> nombre:  {{perif.name}}</h5>
+            <h5 class="card-title"> tipo: {{perif.tipo}}</h5>
+            <h5 class="card-title"> marca: {{perif.marca}}</h5>
+            <h5 class="card-title"> modelo: {{perif.modelo}}</h5>
+            <h5 class="card-title"> precio: ${{perif.precio}}</h5>
         </div>
     </div>
 {%endfor%}

@@ -4,11 +4,13 @@
     {%for monitor in monitor_nuevo%}
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title"> {{monitor.tipo}}</h5>
-            <h5 class="card-title"> {{monitor.marca}}</h5>
-            <h5 class="card-title"> {{monitor.modelo}}</h5>
-            <h5 class="card-title"> {{monitor.resolucion}}</h5>
-            <h5 class="card-title"> {{monitor.conexion}}</h5>
+            <h5 class="card-title"> nombre:  {{monitor.name}}</h5>
+            <h5 class="card-title"> tipo:{{monitor.tipo}}</h5>
+            <h5 class="card-title"> marca:{{monitor.marca}}</h5>
+            <h5 class="card-title"> modelo:{{monitor.modelo}}</h5>
+            <h5 class="card-title"> resolucion:{{monitor.resolucion}}</h5>
+            <h5 class="card-title"> conexion:{{monitor.conexion}}</h5>
+            <h5 class="card-title"> precio: ${{monitor.precio}}</h5>
         </div>
     </div>
 {%endfor%}

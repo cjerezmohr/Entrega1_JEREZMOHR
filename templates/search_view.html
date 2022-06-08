@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block titulo %}
+
+
+{%for equip in equipo%}
+<div class="d-flex" style = "margin-top:5rem; margin-left:7rem">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"> {{equip.name}}</h5>
+            <h5 class="card-title"> {{equip.marca}}</h5>
+            <h5 class="card-title"> {{equip.modelo}}</h5>
+            <h5 class="card-title"> {{equip.disco}}</h5>
+            <h5 class="card-title"> {{equip.memoria}}</h5>
+            <h5 class="card-title"> ${{equip.precio}}</h5>
+        </div>
+    </div>
+{%endfor%}
+
+
+{%for moni in monitor%}
+<div class="d-flex" style = "margin-top:5rem; margin-left:7rem"> 
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"> nombre:  {{moni.name}}</h5>
+            <h5 class="card-title"> tipo:{{moni.tipo}}</h5>
+            <h5 class="card-title"> marca:{{moni.marca}}</h5>
+            <h5 class="card-title"> modelo:{{moni.modelo}}</h5>
+            <h5 class="card-title"> resolucion:{{moni.resolucion}}</h5>
+            <h5 class="card-title"> conexion:{{moni.conexion}}</h5>
+            <h5 class="card-title"> precio: ${{moni.precio}}</h5>
+        </div>
+    </div>
+{%endfor%}
+
+
+{%for perif in periferico%}
+<div class="d-flex" style = "margin-top:5rem; margin-left:7rem">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"> nombre:  {{perif.name}}</h5>
+            <h5 class="card-title"> tipo: {{perif.tipo}}</h5>
+            <h5 class="card-title"> marca: {{perif.marca}}</h5>
+            <h5 class="card-title"> modelo: {{perif.modelo}}</h5>
+            <h5 class="card-title"> precio: ${{perif.precio}}</h5>
+        </div>
+    </div>
+{%endfor%}
+
+{% endblock %}
+

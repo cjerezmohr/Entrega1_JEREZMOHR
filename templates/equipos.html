@@ -4,11 +4,12 @@
     {%for equipo in equipo_nuevo%}
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title"> {{equipo.marca}}</h5>
-            <h5 class="card-title"> {{equipo.modelo}}</h5>
-            <h5 class="card-title"> {{equipo.disco}}</h5>
-            <h5 class="card-title"> {{equipo.memoria}}</h5>
-            <h5 class="card-title"> ${{equipo.precio}}</h5>
+            <h5 class="card-title"> nombre:  {{equipo.name}}</h5>
+            <h5 class="card-title"> marca:  {{equipo.marca}}</h5>
+            <h5 class="card-title"> modelo: {{equipo.modelo}}</h5>
+            <h5 class="card-title"> disco:  {{equipo.disco}}GB</h5>
+            <h5 class="card-title"> memoria:{{equipo.memoria}}GB</h5>
+            <h5 class="card-title"> precio: ${{equipo.precio}}</h5>
         </div>
     </div>
 {%endfor%}
