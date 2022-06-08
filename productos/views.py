@@ -1,17 +1,9 @@
-import re
 from django.shortcuts import render
 from productos.models import *
 from productos.forms import *
 from django.http import HttpResponse
 
 # Create your views here.
-#def market(request):
-    #equipo_nuevo = Desktop_notebook.objects.all()
-    #externo_nuevo = Periferico.objects.all()
-    #monitor_nuevo = Monitor.objects.all()
-    #context = {'equipo_nuevo':equipo_nuevo,'externo_nuevo':externo_nuevo,'monitor_nuevo':monitor_nuevo}
-    #return render(request, 'store.html', context=context)
-
 def equipos(request):
     equipo_nuevo = Desktop_notebook.objects.all()
     context = {'equipo_nuevo':equipo_nuevo}
@@ -86,8 +78,7 @@ def crear_monitores(request):
 
 
 def search_view(request):
-    #print(request.GET)
-    #equipo = Desktop_notebook.objects.get()
+
     equipo = Desktop_notebook.objects.filter(name__icontains = request.GET['search_view'])
     periferico=Periferico.objects.filter(name__icontains = request.GET['search_view'])
     monitor = Monitor.objects.filter(name__icontains = request.GET['search_view'])
